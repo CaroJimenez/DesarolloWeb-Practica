@@ -8,7 +8,8 @@ const routes =[
 {
     path:'/',
     redirect: '/inicio'
-},{
+},
+{
     path: '/',
     component:{
         render(c){
@@ -76,7 +77,15 @@ const routes =[
     path: '/limpieza',
     name: 'limpieza',
     component: ()=>import ('../components/hogar/Limpieza.vue')
+},{
+    path:'*',
+    component:()=> import('../views/ErrorPages/Error404.vue')
 },
+{
+    path: '/formulario',
+    name:'formulario',
+    component: () => import('../components/Formulario.vue')
+}
 ]
 const router = new VueRouter({routes,})
 export default router;
